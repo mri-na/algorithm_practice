@@ -10,6 +10,7 @@ var reader = require('readline').createInterface({
 reader.on('line', (line) => {
   lines.push(line);
 });
+
 reader.on('close', () => {
   let a = Number(lines[0]);
   let b = Number(lines[1]);
