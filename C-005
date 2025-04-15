@@ -1,0 +1,23 @@
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+// 自分の得意な言語で
+// Let's チャレンジ！！
+var lines = [];
+var reader = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+reader.on('line', (line) => {
+  lines.push(line);
+});
+reader.on('close', () => {
+  let [N, D] = lines[0].split(' ').map(Number);
+  let total_length = D;
+
+  for (let i = 1; i < N; i++) {
+     let dupe = Number(lines[i]);
+     total_length += (D - dupe);
+  }
+  let area = D * total_length;
+  console.log(area);
+});
