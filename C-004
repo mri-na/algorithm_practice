@@ -1,0 +1,22 @@
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+// 自分の得意な言語で
+// Let's チャレンジ！！
+var lines = [];
+var reader = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+reader.on('line', (line) => {
+  lines.push(line);
+});
+reader.on('close', () => {
+  let S = lines[0];
+  let count = S.length + 2;
+  let up_down = '+'.repeat(count);
+  let middle = '+' + S + '+';
+  
+  console.log(up_down);
+  console.log(middle);
+  console.log(up_down);
+});
