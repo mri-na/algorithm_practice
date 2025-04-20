@@ -13,12 +13,21 @@ reader.on('line', (line) => {
 reader.on('close', () => {
   let S = lines[0];
   let N = Number(lines[1]);
+  let menuItems = lines[2].split(' ');
+  let found = false;
   
-  for (i = 0; i < N; i++) {
-      if (lines[i + 2].includes(S)) {
-          console.log('Yes');  
-      } else {
-          console.log('No');
+  for (let i = 0; i < N; i++) {
+      let item = menuItems[i];
+      
+      if (item === S) {
+          found = true;
+          break;
       }
+  }
+  
+  if (found) {
+    console.log('Yes'); 
+  } else {
+    console.log('No');  
   }
 });
